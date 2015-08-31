@@ -1,0 +1,41 @@
+﻿<Controls:MetroWindow x:Class="FPtoUnit3DHelper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"  
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:ExtendedToolKit="http://schemas.xceed.com/wpf/xaml/toolkit"        
+        Title="FP &gt; Unit3D" Height="541" Width="409.333" Deactivated="MetroWindow_Deactivated" ResizeMode="NoResize">
+    <Grid>
+        <TextBox x:Name="_textFPName" ToolTip="FP lamp or switch name" Controls:TextBoxHelper.Watermark="FP Name" HorizontalAlignment="Left" Height="38" Margin="37,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="325" FontSize="24" IsEnabled="False" KeyDown="_textFPName_KeyDown"/>
+        <TextBox x:Name="_texDescription" ToolTip="Add comment to this slot" Controls:TextBoxHelper.Watermark="Comment (Optional)" HorizontalAlignment="Left" Height="38" Margin="37,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="325" FontSize="24" IsEnabled="False" PreviewKeyDown="_texDescription_PreviewKeyDown"/>
+        <ComboBox x:Name="_comboUnit3dSwitchType" ToolTip="Unit3D switch type" HorizontalAlignment="Left" Margin="37,366,0,0" VerticalAlignment="Top" Width="325" FontSize="24" Height="41" IsEnabled="False" SelectedIndex="0"/>
+        <RadioButton x:Name="_radioSwitch" Content="Switches" HorizontalAlignment="Left" Margin="201,52,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <RadioButton x:Name="_radioLamp" Content="Lamps" HorizontalAlignment="Left" Margin="41,52,0,0" VerticalAlignment="Top" FontSize="36" Checked="_radioLamp_Checked" IsChecked="True"/>
+        <Label Content="Script Section" HorizontalAlignment="Left" Margin="37,15,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Button x:Name="_buttonUnused" ToolTip="Adds number but commented as unused" Content="Unused" HorizontalAlignment="Left" Margin="37,418,0,0" VerticalAlignment="Top" Width="81" FontSize="18" IsEnabled="False" Click="_buttonUnused_Click"/>
+        <Button x:Name="_buttonStart" Content="Start" HorizontalAlignment="Left" Margin="37,182,0,0" VerticalAlignment="Top" Width="118" FontSize="18" Click="_buttonStart_Click"/>
+        <Controls:NumericUpDown x:Name="_setLampCount" HorizontalAlignment="Right" Margin="0,0,141,296" Width="86" Value="1" ToolTip="Set amount of switch/lamp" Height="32" FontSize="18" VerticalAlignment="Bottom" ></Controls:NumericUpDown>
+        <Button x:Name="_buttonSkip" Content="Skip" ToolTip="Skip this number, not added to script" HorizontalAlignment="Left" Margin="123,418,0,0" VerticalAlignment="Top" Width="71" FontSize="18" Click="_buttonSkip_Click" IsEnabled="False"/>
+        <Button x:Name="_buttonOK" Content="OK" ToolTip="Add this slot to script" HorizontalAlignment="Left" Margin="294,418,0,0" VerticalAlignment="Top" Width="68" FontSize="18" Click="_buttonOK_Click" IsEnabled="False"/>
+        <Button x:Name="_buttonSave" ToolTip="Save all slots to script file" Content="Save" HorizontalAlignment="Left" Margin="294,464,0,0" VerticalAlignment="Top" Width="68" FontSize="18" IsEnabled="False" Click="_buttonSave_Click"/>
+        <TextBox x:Name="_textTableName" ToolTip="Output file prefix, can leave blank" Controls:TextBoxHelper.Watermark="Table Name" HorizontalAlignment="Left" Height="38" Margin="37,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="325" FontSize="24"/>
+        <Button x:Name="_buttonRestart" ToolTip="Return application to default" Content="Restart" HorizontalAlignment="Left" Margin="37,466,0,0" VerticalAlignment="Top" Width="86" FontSize="18" IsEnabled="False" Click="_buttonRestart_Click"/>
+        <DockPanel Margin="37,237,41,239">
+            <Button x:Name="_buttonArrowLeft" Background="Lavender" HorizontalAlignment="Left" Margin="0,7,0,0" VerticalAlignment="Top" Width="25" FontSize="18" Click="_buttonArrowLeft_Click" IsEnabled="False">
+                <Button.OpacityMask>
+                    <VisualBrush Visual="{StaticResource appbar_arrow_left}"/>
+                </Button.OpacityMask>
+            </Button>
+            <TextBlock Margin="10,0,0,0" x:Name="_currentNumberOfObjects" HorizontalAlignment="Left" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" FontSize="24"/>
+            <TextBlock Margin="10,0,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="/" VerticalAlignment="Top" FontSize="24"/>
+            <TextBlock Margin="10,0,0,0" x:Name="_totalNumberOfObjects" HorizontalAlignment="Left" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" FontSize="24"/>
+            <Button x:Name="_buttonArrowRight" Background="Lavender" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Width="25" FontSize="18" Click="_buttonArrowRight_Click" IsEnabled="False">
+                <Button.OpacityMask>
+                    <VisualBrush Visual="{StaticResource appbar_arrow_right}"/>
+                </Button.OpacityMask>
+            </Button>
+            <Controls:NumericUpDown x:Name="_goToNumber" HorizontalAlignment="Right" Width="109" Value="1" ToolTip="Go to number." FontSize="18" Maximum="1" Minimum="1" PreviewKeyDown="_goToNumber_PreviewKeyDown" Margin="0,0,0,4" VerticalAlignment="Stretch" />
+
+        </DockPanel>
+    </Grid>
+</Controls:MetroWindow>
